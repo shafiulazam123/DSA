@@ -1,0 +1,36 @@
+217. Contains Duplicate (with java)
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int element : nums)
+        {
+            if(set.contains(element)) // if the element already present in hashset or not
+            {
+                return true;
+            }
+            else{
+                set.add(element);
+            }
+        }
+        return false;
+        
+    }
+}
+With c++
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> set; // finding element in O(1)
+        for (int element : nums) {
+            if (set.count(element)) // if set has same element before
+            {
+                return true;
+
+            } else {
+                set.insert(element);
+            }
+        }
+        return false;
+    }
+};
